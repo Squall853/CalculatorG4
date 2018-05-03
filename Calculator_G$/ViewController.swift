@@ -1,213 +1,191 @@
-//
-//  ViewController.swift
-//  Calculator_G$
-//
-//  Created by Boi on 4/25/18.
-//  Copyright © 2018 Boi. All rights reserved.
-//
+
 
 import UIKit
 
 class ViewController: UIViewController {
-    var numberOnScreen:Double = 0;
-    var previousNumber:Double = 0;
-    var previousNumber2:Double = 0;
-    var performinMath = false
-    var operation = 0;
-    var operation2 = 0;
-    var newNumber = false
-    var dock = false
-    var result:Double = 0;
-    /*var previousNumber1 = [Double]();
-    var operation1 = [Int]();
-    var i:Int = 0;
-    var t = false*/
     
-    @IBOutlet weak var label1: UILabel!
+    
+    
     @IBOutlet weak var label: UILabel!
-
-    @IBAction func numbers(_ sender: UIButton)
-    {
-        if sender.tag == 10 && dock == false
-        {
-            if newNumber == false
-            {
-            label.text = label.text! + "."
-            dock = true
-            }
-            else
-            {
-                label.text = "0."
-                label1.text = "";
-                dock = true
-                newNumber = false
-                operation = 0;
-                previousNumber = 0;
-                numberOnScreen = 0;
-            }
-            
-        }
-        else if sender.tag == 10 && dock == true
-        {
-            createAlert(title: "WARNING", message: "fail")
-        }
-        else
-        {
-            if performinMath == true || label.text == "0"
-            {
-                label.text = String(sender.tag)
-                numberOnScreen = Double(label.text!)!
-                performinMath = false
-            }
-            else
-            {
-                if newNumber == false
-                {
-                    label.text = label.text! + String(sender.tag)
-                    numberOnScreen = Double(label.text!)!
-                }
-                else
-                {
-                    label.text = String(sender.tag)
-                    numberOnScreen = Double(label.text!)!
-                    newNumber = false
-                }
-            }
-        }
-    }
     
-    @IBAction func buttons(_ sender: UIButton)
-    {
-        
-        if label.text != "" && sender.tag != 11 && sender.tag != 16 && sender.tag != 17 && sender.tag != 20
+    var stringWithMathematicalOperation: String = ""
+    var result  :Double  = 0.0
+    var pheptoan = 1
+    var phepdem = 0
+    
+    
+    @IBAction func button(_ sender: UIButton) {
+        if sender.tag == 11 && phepdem == 0 && pheptoan == 1 && label.text != ""
         {
-            newNumber = false
-            previousNumber = Double(label.text!)!
-            /*if sender.tag != 19
-            {
-                /*previousNumber1.append(Double(label.text!)!)
-                operation1.append(sender.tag)
-                t=true*/
-                previousNumber2 = Double(label.text!)!;
-                operation2 = sender.tag;
-            }
-            else
-            {
-                i+=1;
-                label.text = "";
-                if t == true
-                {
-                    i+=1;
-                    t = false
-                }
-            }*/
-            //sender.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1);
-            if sender.tag == 12
-            {
-                label1.text = "+";
-            }
-            else if sender.tag == 13
-            {
-                label1.text = "-";
-            }
-            else if sender.tag == 14
-            {
-                label1.text = "x";
-            }
-            else if sender.tag == 15
-            {
-                label1.text = "/";
-            }
-            if sender.tag == 18
-            {
-                label.text = String(previousNumber / 100);
-                dock = true
-            }
-            else
-            {
-                dock = false
-                performinMath = true;
-                operation = sender.tag
-            }
-        }
-        else if sender.tag == 11 || sender.tag == 20
-        {
-            newNumber = true
-            if operation == 12
-            {
-                result = (previousNumber + numberOnScreen);
-            }
-            else if operation == 13
-            {
-                result = (previousNumber - numberOnScreen);
-            }
-            else if operation == 14
-            {
-                result = (previousNumber * numberOnScreen);
-            }
-            else if operation == 15
-            {
-                result = (previousNumber / numberOnScreen);
-            }
-            
-            if Double(Int(result)) == result
-            {
-                label.text = String(Int(result))
-            }
-            else
-            {
+            let exp: NSExpression = NSExpression(format: stringWithMathematicalOperation)
+            result = exp.expressionValue(with: nil, context: nil) as! Double
             label.text = String(result)
-            }
-            previousNumber = Double(label.text!)!
-            dock = false
-            label1.text = ""
-           // previousNumber1.remove(at: i)
-            //operation1.remove(at: i)
-            
-            /*if sender.tag == 20
-            {
-                numberOnScreen = Double(label.text!)!
-                i-=1;
-                //previousNumber = previousNumber2
-                //operation = operation2
-            }*/
         }
         else if sender.tag == 16
         {
-            operation = 0;
-            previousNumber = 0;
-            numberOnScreen = 0;
-            label.text = "0";
-            label1.text = "";
-            dock = false
-            result = 0;
-        }
-        else if sender.tag == 17
-        {
-            if label.text == "0"
-            {
-            createAlert(title: "WARNING", message: "fail")
-            }
-            else
-            {
-                newNumber = true
-                dock = true
-                label.text = String(Double(label.text!)! * -1);
-                numberOnScreen = Double(label.text!)!
-            }
+            result = 0
+            stringWithMathematicalOperation = ""
+            label.text = String (result)
+            pheptoan = 1
+            phepdem = 0
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+    @IBAction func numbers(_ sender: UIButton) {
+        if  sender.tag != 11 && sender.tag != 12 && sender.tag != 13 && sender.tag != 14 &&
+            sender.tag != 15 && sender.tag != 16 && sender.tag != 18 && sender.tag != 20 &&
+            sender.tag != 21 && sender.tag != 22 && sender.tag != 23 && sender.tag != 24 &&
+            sender.tag != 25 && sender.tag != 26 && sender.tag != 27 && sender.tag != 19 && sender.tag != 17
+            
+        {
+            stringWithMathematicalOperation = 	stringWithMathematicalOperation + String(sender.tag)
+            label.text = stringWithMathematicalOperation
+            pheptoan = 1
+        }
+            
+            //+/-
+        else if label.text != "" && sender.tag == 17 && pheptoan == 1
+        {
+            
+            label.text = String((Double(stringWithMathematicalOperation)!)*(-1.0))
+            pheptoan = 0
+        }
+            
+            //tinh tan
+        else if label.text != "" && sender.tag == 26 && pheptoan == 1
+        {
+            if ((Double(stringWithMathematicalOperation)!) == 90 )
+            {
+                label.text = "Error"
+            }
+                
+            else
+            {
+                label.text = String(tan((Double.pi*(Double(stringWithMathematicalOperation)!))/180))
+                pheptoan = 0
+            }
+        }
+            
+            //tinh cos
+        else if label.text != "" && sender.tag == 22 && pheptoan == 1
+        {
+            if ((Double(stringWithMathematicalOperation)!) == 90 )
+            {
+                label.text = String(0)
+                pheptoan = 0
+                
+            }
+                
+            else
+            {
+                label.text = String(cos((Double.pi*(Double(stringWithMathematicalOperation)!))/180))
+                pheptoan = 0
+                
+            }
+        }
+            
+            //tinh sin
+        else if label.text != "" && sender.tag == 21 && pheptoan == 1
+        {
+            
+            label.text = String(sin((Double.pi*(Double(stringWithMathematicalOperation)!))/180))
+            
+            pheptoan = 0
+        }
+            
+            //tinh luy thua 2
+        else if label.text != "" && sender.tag == 18 && pheptoan == 1
+        {
+            label.text = String(pow((Double(stringWithMathematicalOperation)!), 2.0))
+            pheptoan = 0
+        }
+            //ham log10
+        else if label.text != "" && sender.tag == 24 && pheptoan == 1
+        {
+            label.text = String(log10(Double(stringWithMathematicalOperation)!))
+            pheptoan = 0
+        }
+            
+            //can bac 2
+        else if label.text != "" && sender.tag == 23 && pheptoan == 1
+        {
+            label.text = String(sqrt(Double(stringWithMathematicalOperation)!))
+            pheptoan = 0
+        }
+            
+            //pi
+        else if label.text != "" && sender.tag == 25 && pheptoan == 1
+        {
+            label.text = String(Double.pi)
+            pheptoan = 0
+        }
+            
+            //cong
+        else if label.text != "" && sender.tag == 12 && pheptoan == 1
+        {
+            stringWithMathematicalOperation = label.text! + "+"
+            label.text = stringWithMathematicalOperation
+            pheptoan = 0
+        }
+            
+            //tru
+        else if label.text != "" && sender.tag == 13 && pheptoan == 1
+        {
+            stringWithMathematicalOperation = label.text! + "-"
+            label.text = stringWithMathematicalOperation
+            pheptoan = 0
+        }
+            
+            //nhan
+        else if label.text != "" && sender.tag == 14 && pheptoan == 1
+        {
+            stringWithMathematicalOperation = label.text! + "*"
+            label.text = stringWithMathematicalOperation
+            pheptoan = 0
+        }
+            
+            //chia
+        else if label.text != "" && sender.tag == 15 && pheptoan == 1
+        {
+            stringWithMathematicalOperation = label.text! + "/"
+            label.text = stringWithMathematicalOperation
+            pheptoan = 0
+        }
+            
+            //dau cham
+        else if label.text != "" && sender.tag == 10 && pheptoan == 1
+        {
+            stringWithMathematicalOperation = label.text! + "."
+            label.text = stringWithMathematicalOperation
+            pheptoan = 0
+        }
+            
+            //dau (
+        else if label.text != "" && sender.tag == 19
+        {
+            stringWithMathematicalOperation = label.text! + "("
+            label.text = stringWithMathematicalOperation
+            pheptoan = 0
+            phepdem = phepdem  + 1
+        }
+            
+            //dau )
+        else if label.text != "" && sender.tag == 20
+        {
+            stringWithMathematicalOperation = label.text! + ")"
+            label.text = stringWithMathematicalOperation
+            pheptoan = 1
+            phepdem = phepdem  - 1
+            
+        }
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
+    
+    
+    // tao thong bao
     func createAlert (title:String, message:String)
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -222,6 +200,15 @@ class ViewController: UIViewController {
     }
 
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 }
 
 	
