@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E07E1AC720906FBD00D59A83"
-               BuildableName = "Calculator_G$.app"
-               BlueprintName = "Calculator_G$"
-               ReferencedContainer = "container:Calculator_G$.xcodeproj">
+               BuildableName = "Calculator_G4.app"
+               BlueprintName = "Calculator_G4"
+               ReferencedContainer = "container:Calculator_G4.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E07E1AC720906FBD00D59A83"
-            BuildableName = "Calculator_G$.app"
-            BlueprintName = "Calculator_G$"
-            ReferencedContainer = "container:Calculator_G$.xcodeproj">
+            BuildableName = "Calculator_G4.app"
+            BlueprintName = "Calculator_G4"
+            ReferencedContainer = "container:Calculator_G4.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E07E1AC720906FBD00D59A83"
-            BuildableName = "Calculator_G$.app"
-            BlueprintName = "Calculator_G$"
-            ReferencedContainer = "container:Calculator_G$.xcodeproj">
+            BuildableName = "Calculator_G4.app"
+            BlueprintName = "Calculator_G4"
+            ReferencedContainer = "container:Calculator_G4.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E07E1AC720906FBD00D59A83"
-            BuildableName = "Calculator_G$.app"
-            BlueprintName = "Calculator_G$"
-            ReferencedContainer = "container:Calculator_G$.xcodeproj">
+            BuildableName = "Calculator_G4.app"
+            BlueprintName = "Calculator_G4"
+            ReferencedContainer = "container:Calculator_G4.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

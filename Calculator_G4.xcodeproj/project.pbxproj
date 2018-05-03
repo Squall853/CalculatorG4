@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E07E1AC820906FC500D59A83 /* Calculator_G$.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator_G$.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E07E1AC820906FC500D59A83 /* Calculator_G4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator_G4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E07E1ACB20906FC500D59A83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E07E1ACD20906FC500D59A83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E07E1AD020906FC500D59A83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		E07E1ABF20906FBC00D59A83 = {
 			isa = PBXGroup;
 			children = (
-				E07E1ACA20906FC500D59A83 /* Calculator_G$ */,
+				E07E1ACA20906FC500D59A83 /* Calculator_G4 */,
 				E07E1AC920906FC500D59A83 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +46,12 @@
 		E07E1AC920906FC500D59A83 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E07E1AC820906FC500D59A83 /* Calculator_G$.app */,
+				E07E1AC820906FC500D59A83 /* Calculator_G4.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E07E1ACA20906FC500D59A83 /* Calculator_G$ */ = {
+		E07E1ACA20906FC500D59A83 /* Calculator_G4 */ = {
 			isa = PBXGroup;
 			children = (
 				E07E1ACB20906FC500D59A83 /* AppDelegate.swift */,
@@ -61,15 +61,16 @@
 				E07E1AD420906FC600D59A83 /* LaunchScreen.storyboard */,
 				E07E1AD720906FC600D59A83 /* Info.plist */,
 			);
+			name = Calculator_G4;
 			path = Calculator_G$;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E07E1AC720906FBD00D59A83 /* Calculator_G$ */ = {
+		E07E1AC720906FBD00D59A83 /* Calculator_G4 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E07E1ADA20906FC600D59A83 /* Build configuration list for PBXNativeTarget "Calculator_G$" */;
+			buildConfigurationList = E07E1ADA20906FC600D59A83 /* Build configuration list for PBXNativeTarget "Calculator_G4" */;
 			buildPhases = (
 				E07E1AC420906FBD00D59A83 /* Sources */,
 				E07E1AC520906FBD00D59A83 /* Frameworks */,
@@ -79,9 +80,9 @@
 			);
 			dependencies = (
 			);
-			name = Calculator_G$;
+			name = Calculator_G4;
 			productName = Calculator_G$;
-			productReference = E07E1AC820906FC500D59A83 /* Calculator_G$.app */;
+			productReference = E07E1AC820906FC500D59A83 /* Calculator_G4.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -100,7 +101,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E07E1AC320906FBC00D59A83 /* Build configuration list for PBXProject "Calculator_G$" */;
+			buildConfigurationList = E07E1AC320906FBC00D59A83 /* Build configuration list for PBXProject "Calculator_G4" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -113,7 +114,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E07E1AC720906FBD00D59A83 /* Calculator_G$ */,
+				E07E1AC720906FBD00D59A83 /* Calculator_G4 */,
 			);
 		};
 /* End PBXProject section */
@@ -281,7 +282,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E07E1AC320906FBC00D59A83 /* Build configuration list for PBXProject "Calculator_G$" */ = {
+		E07E1AC320906FBC00D59A83 /* Build configuration list for PBXProject "Calculator_G4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E07E1AD820906FC600D59A83 /* Debug */,
@@ -290,13 +291,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E07E1ADA20906FC600D59A83 /* Build configuration list for PBXNativeTarget "Calculator_G$" */ = {
+		E07E1ADA20906FC600D59A83 /* Build configuration list for PBXNativeTarget "Calculator_G4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E07E1ADB20906FC600D59A83 /* Debug */,
 				E07E1ADC20906FC600D59A83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
