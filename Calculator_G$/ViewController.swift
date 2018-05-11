@@ -5,6 +5,7 @@ import UIKit
 class ViewController: UIViewController {
     
     
+    @IBOutlet weak var label1: UILabel!
     
     @IBOutlet weak var label: UILabel!
     
@@ -12,7 +13,6 @@ class ViewController: UIViewController {
     var result  :Double  = 0.0
     var pheptoan = 1
     var phepdem = 0
-    var ngoac = true
     
     
     @IBAction func button(_ sender: UIButton) {
@@ -22,9 +22,9 @@ class ViewController: UIViewController {
                 result = exp.expressionValue(with: nil, context: nil) as! Double
                 label.text = String(result)
         }
-        else if phepdem != 0 && ngoac == false && sender.tag == 11
+        else if phepdem != 0 && sender.tag == 11
         {
-            createAlert(title: "WARNING", message: "Thieu )")
+            createAlert(title: "WARNING", message: "Thieu " + String(phepdem) + " )")
         }
         else if pheptoan == 0 && sender.tag == 11
         {
@@ -37,7 +37,6 @@ class ViewController: UIViewController {
             label.text = ""
             pheptoan = 1
             phepdem = 0
-            ngoac = true
         }
     }
     
@@ -178,7 +177,6 @@ class ViewController: UIViewController {
             label.text = stringWithMathematicalOperation
             pheptoan = 0
             phepdem = phepdem  + 1
-            ngoac = false
         }
             
             //dau )
@@ -188,7 +186,6 @@ class ViewController: UIViewController {
             label.text = stringWithMathematicalOperation
             pheptoan = 1
             phepdem = phepdem  - 1
-            ngoac = true
         }
     }
 
