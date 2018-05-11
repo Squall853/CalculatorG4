@@ -12,22 +12,32 @@ class ViewController: UIViewController {
     var result  :Double  = 0.0
     var pheptoan = 1
     var phepdem = 0
+    var ngoac = true
     
     
     @IBAction func button(_ sender: UIButton) {
         if sender.tag == 11 && phepdem == 0 && pheptoan == 1 && label.text != ""
         {
-            let exp: NSExpression = NSExpression(format: stringWithMathematicalOperation)
-            result = exp.expressionValue(with: nil, context: nil) as! Double
-            label.text = String(result)
+                let exp: NSExpression = NSExpression(format: stringWithMathematicalOperation)
+                result = exp.expressionValue(with: nil, context: nil) as! Double
+                label.text = String(result)
+        }
+        else if phepdem != 0 && ngoac == false && sender.tag == 11
+        {
+            createAlert(title: "WARNING", message: "Thieu )")
+        }
+        else if pheptoan == 0 && sender.tag == 11
+        {
+            createAlert(title: "WARNING", message: "Khong hop le!!!")
         }
         else if sender.tag == 16
         {
             result = 0
             stringWithMathematicalOperation = ""
-            label.text = String (result)
+            label.text = ""
             pheptoan = 1
             phepdem = 0
+            ngoac = true
         }
     }
     
@@ -162,12 +172,13 @@ class ViewController: UIViewController {
         }
             
             //dau (
-        else if label.text != "" && sender.tag == 19
+        else if sender.tag == 19
         {
             stringWithMathematicalOperation = label.text! + "("
             label.text = stringWithMathematicalOperation
             pheptoan = 0
             phepdem = phepdem  + 1
+            ngoac = false
         }
             
             //dau )
@@ -177,9 +188,8 @@ class ViewController: UIViewController {
             label.text = stringWithMathematicalOperation
             pheptoan = 1
             phepdem = phepdem  - 1
-            
+            ngoac = true
         }
-
     }
 
     
