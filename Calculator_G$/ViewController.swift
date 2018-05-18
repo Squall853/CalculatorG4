@@ -10,6 +10,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
     var stringWithMathematicalOperation: String = ""
+    var strNum: String = ""
     var result  :Double  = 0.0
     var pheptoan = 1
     var phepdem = 0
@@ -18,7 +19,7 @@ class ViewController: UIViewController {
     @IBAction func button(_ sender: UIButton) {
         if sender.tag == 11 && phepdem == 0 && pheptoan == 1 && label.text != ""
         {
-                let exp: NSExpression = NSExpression(format: stringWithMathematicalOperation)
+                let exp: NSExpression = NSExpression(format: stringWithMathematicalOperation + strNum + ".0")
                 result = exp.expressionValue(with: nil, context: nil) as! Double
                 label.text = String(result)
         }
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
             pheptoan = 1
             phepdem = 0
         }
+        strNum = ""
     }
     
 
@@ -48,8 +50,9 @@ class ViewController: UIViewController {
             sender.tag != 25 && sender.tag != 26 && sender.tag != 27 && sender.tag != 19 && sender.tag != 17
             
         {
-            stringWithMathematicalOperation = 	stringWithMathematicalOperation + String(sender.tag)
-            label.text = stringWithMathematicalOperation
+            strNum = strNum + String(sender.tag)
+            //stringWithMathematicalOperation = stringWithMathematicalOperation + String(sender.tag)
+            label.text = label.text! + String(sender.tag)
             pheptoan = 1
         }
             
@@ -57,7 +60,7 @@ class ViewController: UIViewController {
         else if label.text != "" && sender.tag == 17 && pheptoan == 1
         {
             
-            label.text = String((Double(stringWithMathematicalOperation)!)*(-1.0))
+            label.text = String(Double(stringWithMathematicalOperation)!*(-1.0))
             pheptoan = 0
         }
             
@@ -133,33 +136,37 @@ class ViewController: UIViewController {
             //cong
         else if label.text != "" && sender.tag == 12 && pheptoan == 1
         {
-            stringWithMathematicalOperation = label.text! + "+"
+            stringWithMathematicalOperation = stringWithMathematicalOperation + strNum + ".0" + "+"
             label.text = stringWithMathematicalOperation
             pheptoan = 0
+            strNum = ""
         }
             
             //tru
         else if label.text != "" && sender.tag == 13 && pheptoan == 1
         {
-            stringWithMathematicalOperation = label.text! + "-"
+            stringWithMathematicalOperation = stringWithMathematicalOperation + strNum + ".0" + "-"
             label.text = stringWithMathematicalOperation
             pheptoan = 0
+            strNum = ""
         }
             
             //nhan
         else if label.text != "" && sender.tag == 14 && pheptoan == 1
         {
-            stringWithMathematicalOperation = label.text! + "*"
+            stringWithMathematicalOperation = stringWithMathematicalOperation + strNum + ".0" + "*"
             label.text = stringWithMathematicalOperation
             pheptoan = 0
+            strNum = ""
         }
             
             //chia
         else if label.text != "" && sender.tag == 15 && pheptoan == 1
         {
-            stringWithMathematicalOperation = label.text! + "/"
+            stringWithMathematicalOperation = stringWithMathematicalOperation + strNum + ".0" + "/"
             label.text = stringWithMathematicalOperation
             pheptoan = 0
+            strNum = ""
         }
             
             //dau cham
